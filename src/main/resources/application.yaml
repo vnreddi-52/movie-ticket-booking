@@ -3,10 +3,12 @@ server:
 spring:
   application:
     name: book-my-ticket
+
   datasource:
-    url: jdbc:mysql://localhost:3306/book-my-tickets?createDatabaseIfNotExist=true
-    username: root
-    password: root
+    url: ${MYSQL_URL}
+    username: ${MYSQLUSER}
+    password: ${MYSQLPASSWORD}
+
   jpa:
     hibernate:
       ddl-auto: update
