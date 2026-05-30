@@ -174,8 +174,7 @@ body {
 }
 
 /* ===== ANIMATIONS ===== */
-@
-keyframes toastIn {
+@keyframes toastIn {
 	from {opacity: 0;
 	transform: translateX(400px)
 }
@@ -186,8 +185,7 @@ to {
 }
 
 }
-@
-keyframes toastOut {
+@keyframes toastOut {
 	from {opacity: 1;
 	transform: translateX(0)
 }
@@ -198,8 +196,7 @@ to {
 }
 
 }
-@
-keyframes fadeInUp {
+@keyframes fadeInUp {
 	from {opacity: 0;
 	transform: translateY(25px)
 }
@@ -234,7 +231,15 @@ to {
 	<div class="otp-box">
 		<h3>Verify OTP</h3>
 		<p>Enter the 6-digit OTP sent to your email</p>
-
+		<div th:if="${demoOtp}"
+     style="background:#fff3cd;
+            color:black;
+            padding:10px;
+            margin-bottom:15px;
+            border-radius:8px;
+            font-weight:bold;">
+    Demo OTP: <span th:text="${demoOtp}"></span>
+</div>
 		<form action="/otp" method="post">
 			<input type="hidden" name="email" th:value="${email}">
 

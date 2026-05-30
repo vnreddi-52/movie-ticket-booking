@@ -12,7 +12,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
@@ -115,6 +114,7 @@ public class UserServiceImpl implements UserService {
 
 		attributes.addFlashAttribute("pass", "Otp Sent Success");
 		attributes.addFlashAttribute("email", userDto.getEmail());
+		attributes.addFlashAttribute("demoOtp", otp);
 
 		return "redirect:/otp";
 	}
